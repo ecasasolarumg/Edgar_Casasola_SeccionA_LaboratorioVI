@@ -1,0 +1,94 @@
+openapi: 3.0.3
+info:
+  title: API Reservas Hotel
+  version: 1.0.0
+  description: API RESTful para la administración de reservas de un hotel.
+paths:
+  /api/reservas:
+    post:
+      summary: Crear una nueva reserva
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reserva'
+      responses:
+        '201':
+          description: Reserva creada exitosamente
+    get:
+      summary: Consultar todas las reservas
+      responses:
+        '200':
+          description: Lista de reservas exitosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reserva'
+  /api/reservas/{id}:
+    get:
+      summary: Consultar reserva por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Reserva encontrada
+        '404':
+          description: Reserva no encontrada
+    put:
+      summary: Actualizar reserva
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Reserva'
+      responses:
+        '200':
+          description: Reserva actualizada
+        '404':
+          description: Reserva no encontrada
+    delete:
+      summary: Cancelar reserva
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Reserva cancelada
+        '404':
+          description: Reserva no encontrada
+components:
+  schemas:
+    Reserva:
+      type: object
+      properties:
+        id:
+          type: integer
+        nombreCliente:
+          type: string
+        habitacion:
+          type: string
+        fechaEntrada:
+          type: string
+          format: date
+        fechaSalida:
+          type: string
+          format: date
+        estado:
+          type: string
