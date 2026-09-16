@@ -1,0 +1,93 @@
+openapi: 3.0.3
+info:
+  title: API Biblioteca
+  version: 1.0.0
+  description: API RESTful para la administración de libros de una biblioteca.
+paths:
+  /api/libros:
+    get:
+      summary: Consultar todos los libros
+      responses:
+        '200':
+          description: Lista de libros exitosa
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Libro'
+    post:
+      summary: Registrar un nuevo libro
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Libro'
+      responses:
+        '201':
+          description: Libro registrado exitosamente
+  /api/libros/titulo/{titulo}:
+    get:
+      summary: Consultar libro por título
+      parameters:
+        - name: titulo
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Libro encontrado
+        '404':
+          description: Libro no encontrado
+  /api/libros/{id}:
+    put:
+      summary: Actualizar libro
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Libro'
+      responses:
+        '200':
+          description: Libro actualizado
+        '404':
+          description: Libro no encontrado
+    delete:
+      summary: Eliminar libro
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Libro eliminado
+        '404':
+          description: Libro no encontrado
+components:
+  schemas:
+    Libro:
+      type: object
+      properties:
+        id:
+          type: integer
+        titulo:
+          type: string
+        autor:
+          type: string
+        isbn:
+          type: string
+        anioPublicacion:
+          type: integer
+        estado:
+          type: string
