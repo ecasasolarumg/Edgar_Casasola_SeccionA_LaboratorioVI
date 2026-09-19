@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<ejercicio4>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.laboratorio.ejercicio4.Application",
+            "projectName": "ejercicio4",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

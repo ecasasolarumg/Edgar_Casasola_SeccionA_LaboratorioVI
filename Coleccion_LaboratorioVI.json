@@ -1,0 +1,155 @@
+{
+    "info": {
+        "name": "Laboratorio VI - APIs Edgar Casasola",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Ejercicio 4: Libros",
+            "item": [
+                {
+                    "name": "1. POST - Registrar Libro",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"titulo\": \"Clean Code\",\n  \"autor\": \"Robert C. Martin\",\n  \"isbn\": \"978-0132350884\",\n  \"anioPublicacion\": 2008,\n  \"estado\": \"DISPONIBLE\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/libros",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "libros"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2. GET - Consultar Libros",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/api/libros",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "libros"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Ejercicio 5: Cursos",
+            "item": [
+                {
+                    "name": "1. POST - Registrar Curso",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"nombre\": \"Ingeniería en Sistemas - Laboratorio VI\",\n  \"codigo\": \"SIS-020\",\n  \"creditos\": 5,\n  \"estado\": \"ACTIVO\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/cursos",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "cursos"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2. GET - Consultar Cursos",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/api/cursos",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "cursos"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Ejercicio 6: Reservas",
+            "item": [
+                {
+                    "name": "1. POST - Registrar Reserva",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"nombreCliente\": \"Edgar Casasola\",\n  \"habitacion\": \"Suite Presidencial A-1\",\n  \"fechaEntrada\": \"2026-09-20\",\n  \"fechaSalida\": \"2026-09-25\",\n  \"estado\": \"CONFIRMADA\"\n}"
+                        },
+                        "url": {
+                            "raw": "http://localhost:8080/api/reservas",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "reservas"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "2. GET - Consultar Reservas",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/api/reservas",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "api",
+                                "reservas"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
